@@ -1,6 +1,6 @@
 Name:           waybar
 Version:        0.8.0
-Release:        2.1
+Release:        3
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 Group:          System/GUI/Other
@@ -46,3 +46,4 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 %{_sysconfdir}/xdg/waybar/
 %{_bindir}/waybar
 %{_mandir}/man?/%{name}*
+%{_userunitdir}/waybar.service
