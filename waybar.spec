@@ -11,6 +11,7 @@ BuildRequires:  fmt-devel
 BuildRequires:  pkgconfig(gdkmm-3.0)
 BuildRequires:  pkgconfig(jsoncpp)
 BuildRequires:  pkgconfig(libinput)
+BuildRequires:  pkgconfig(systemd)
 BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  meson
