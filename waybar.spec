@@ -1,11 +1,13 @@
 Name:           waybar
 Version:        0.8.0
-Release:        3
+Release:        4
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 Group:          System/GUI/Other
 URL:            https://github.com/Alexays/Waybar
 Source0:         https://github.com/Alexays/Waybar/archive/%{version}.tar.gz
+Source1:	waybar.config
+Source2:	style.css
 BuildRequires:  cmake
 BuildRequires:  fmt-devel
 BuildRequires:  pkgconfig(gdkmm-3.0)
@@ -42,6 +44,9 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %install
 %meson_install
+
+install -m0644 %{SOURCE1} %{_sysconfdir}/xdg/waybar/config
+install -m0644 %{SOURCE2} %{_sysconfdir}/xdg/waybar/style.css
 
 %files
 %{_sysconfdir}/xdg/waybar/
