@@ -1,9 +1,8 @@
 Name:           waybar
 Version:        0.8.0
-Release:        3
+Release:        4
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
-Group:          System/GUI/Other
 URL:            https://github.com/Alexays/Waybar
 Source0:         https://github.com/Alexays/Waybar/archive/%{version}.tar.gz
 BuildRequires:  cmake
