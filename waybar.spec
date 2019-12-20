@@ -42,9 +42,6 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 %install
 %meson_install
 
-install -m0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/xdg/waybar/config
-install -m0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/xdg/waybar/style.css
-
 %files
 %{_sysconfdir}/xdg/waybar/
 %{_bindir}/waybar
