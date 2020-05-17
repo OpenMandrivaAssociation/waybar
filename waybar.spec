@@ -1,5 +1,5 @@
 Name:           waybar
-Version:	0.9.1
+Version:	0.9.2
 Release:	1
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
