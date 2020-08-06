@@ -1,10 +1,12 @@
+%define tarname Waybar
+
 Name:           waybar
-Version:	0.9.2
-Release:	2
+Version:	0.9.3
+Release:	1
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 URL:            https://github.com/Alexays/Waybar
-Source0:        https://github.com/Alexays/Waybar/archive/%{version}.tar.gz
+Source0:        https://github.com/Alexays/Waybar/archive/%{version}/%{tarname}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  fmt-devel
 BuildRequires:  cmake(date)
@@ -35,7 +37,7 @@ Recommends:     sway
 Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
-%setup -q -n Waybar-%{version}
+%setup -q -n %{tarname}-%{version}
 
 %build
 %meson
