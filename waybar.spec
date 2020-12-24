@@ -1,7 +1,7 @@
 %define tarname Waybar
 
 Name:           waybar
-Version:	0.9.4
+Version:	0.9.5
 Release:	1
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
