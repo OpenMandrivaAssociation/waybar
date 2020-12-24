@@ -9,6 +9,7 @@ URL:            https://github.com/Alexays/Waybar
 Source0:        https://github.com/Alexays/Waybar/archive/%{version}/%{tarname}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  fmt-devel
+BuildRequires:  sndio-devel
 BuildRequires:  cmake(date)
 BuildRequires:  pkgconfig(gtk-layer-shell-0)
 BuildRequires:  pkgconfig(gdkmm-3.0)
