@@ -32,7 +32,7 @@ Recommends:	sway
 Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
-%setup -n Waybar-%{version} -p1
+%autosetup -n Waybar-%{version} -p1
 
 %build
 %meson
