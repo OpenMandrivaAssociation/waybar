@@ -14,7 +14,7 @@ BuildRequires:	pkgconfig(systemd)
 BuildRequires:	stdc++-static-devel
 BuildRequires:	pkgconfig(udev)
 BuildRequires:	meson
-BuildRequires:	spdlog-devel
+BuildRequires:	pkgconfig(spdlog)
 # optional: man pages
 BuildRequires:	scdoc
 # optional: tray module
