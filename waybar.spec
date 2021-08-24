@@ -22,6 +22,7 @@ BuildRequires:  pkgconfig(udev)
 BuildRequires:  meson
 BuildRequires:  ninja
 BuildRequires:  pkgconfig(spdlog)
+BuildRequires:  pkgconfig(xkbregistry)
 # optional: man pages
 BuildRequires:  scdoc
 # optional: tray module
