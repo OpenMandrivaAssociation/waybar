@@ -15,6 +15,7 @@ BuildRequires:  pkgconfig(gtk-layer-shell-0)
 BuildRequires:  pkgconfig(gdkmm-3.0)
 BuildRequires:  pkgconfig(jsoncpp)
 BuildRequires:  pkgconfig(libinput)
+BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
