@@ -2,7 +2,7 @@
 
 Name:           waybar
 Version:	0.9.8
-Release:	2
+Release:	3
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 URL:            https://github.com/Alexays/Waybar
@@ -19,6 +19,7 @@ BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
+BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  meson
 BuildRequires:  ninja
 BuildRequires:  pkgconfig(spdlog)
