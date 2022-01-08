@@ -1,5 +1,5 @@
 %define tarname Waybar
-%define snapshot 20210109
+%define snapshot 20220109
 Name:           waybar
 Version:	0.9.8
 Release:	4.%{snapshot}.1
