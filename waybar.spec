@@ -1,13 +1,12 @@
 %define tarname Waybar
-%define snapshot 20220109
 Name:           waybar
-Version:	0.9.8
-Release:	4.%{snapshot}.1
+Version:	0.9.9
+Release:	1
+Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 URL:            https://github.com/Alexays/Waybar
-Source0:        https://github.com/Alexays/Waybar/archive/refs/heads/master.tar.gz#/Waybar-%{snapshot}.tar.gz
-
+Source0:        https://github.com/Alexays/Waybar/archive/%{version}/%{tarname}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  fmt-devel
 BuildRequires:  sndio-devel
@@ -42,7 +41,7 @@ Recommends:     sway
 Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
-%setup -q -n %{tarname}-master
+%setup -q -n %{tarname}-%{version}
 %autopatch -p1
 
 %build
