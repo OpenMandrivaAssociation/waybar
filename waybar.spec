@@ -19,6 +19,7 @@ BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
+BuildRequires:  pkgconfig(upower-glib)
 BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  meson
 BuildRequires:  ninja
