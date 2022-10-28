@@ -1,13 +1,13 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.9.13
-Release:	2
+Version:	0.9.14
+Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 URL:            https://github.com/Alexays/Waybar
 Source0:        https://github.com/Alexays/Waybar/archive/%{version}/%{tarname}-%{version}.tar.gz
-Patch0:         https://patch-diff.githubusercontent.com/raw/Alexays/Waybar/pull/1617.patch
+
 BuildRequires:  cmake
 BuildRequires:  fmt-devel
 BuildRequires:  sndio-devel
@@ -18,6 +18,7 @@ BuildRequires:  pkgconfig(jsoncpp)
 BuildRequires:  pkgconfig(libinput)
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(systemd)
+BuildRequires:  pkgconfig(jack)
 BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(upower-glib)
