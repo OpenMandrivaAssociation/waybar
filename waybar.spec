@@ -7,7 +7,7 @@ Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 URL:            https://github.com/Alexays/Waybar
 Source0:        https://github.com/Alexays/Waybar/archive/%{version}/%{tarname}-%{version}.tar.gz
-Patch0:         https://patch-diff.githubusercontent.com/raw/Alexays/Waybar/pull/1617.patch
+
 BuildRequires:  cmake
 BuildRequires:  fmt-devel
 BuildRequires:  sndio-devel
