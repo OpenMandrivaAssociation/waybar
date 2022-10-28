@@ -18,7 +18,7 @@ BuildRequires:  pkgconfig(jsoncpp)
 BuildRequires:  pkgconfig(libinput)
 BuildRequires:  pkgconfig(libevdev)
 BuildRequires:  pkgconfig(systemd)
-BuildRequires:  pkgconfig(pkgconfig(jack))
+BuildRequires:  pkgconfig(jack)
 BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(upower-glib)
