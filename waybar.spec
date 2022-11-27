@@ -23,6 +23,7 @@ BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(upower-glib)
 BuildRequires:  pkgconfig(wayland-protocols)
+BuildRequires:  pkgconfig(wireplumber-0.4)
 BuildRequires:  meson
 BuildRequires:  ninja
 BuildRequires:  pkgconfig(spdlog)
