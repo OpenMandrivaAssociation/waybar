@@ -1,6 +1,6 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.9.16
+Version:	0.9.17
 Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
