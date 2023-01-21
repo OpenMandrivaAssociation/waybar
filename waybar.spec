@@ -28,25 +28,26 @@ BuildRequires:  meson
 BuildRequires:  ninja
 BuildRequires:  pkgconfig(spdlog)
 BuildRequires:  pkgconfig(xkbregistry)
+
 # optional: man pages
-BuildRequires:  scdoc
+BuildRequires:	scdoc
 # optional: tray module
-BuildRequires:  libdbusmenu-gtk-devel
+BuildRequires:	pkgconfig(dbusmenu-gtk3-0.4)
 # optional: network
-BuildRequires:  libnl3-devel
+BuildRequires:	pkgconfig(libnl-3.0)
 # optional: audio
-BuildRequires:  pkgconfig(libpulse)
+BuildRequires:	pkgconfig(libpulse)
 # optional: mpd module
-BuildRequires:  libmpdclient-devel
+BuildRequires:	pkgconfig(libmpdclient)
 # optional: sway integration
-Recommends:     sway
+Recommends:	sway
 
 %description
 Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
 %setup -q -n %{tarname}-%{version}
-%autopatch -p1
+%autopatch -p
 
 %build
 %meson \
