@@ -1,20 +1,34 @@
-Summary:	Customizable Wayland bar for Sway and Wlroots based compositors
-Name:		waybar
-Version:	0.9.5
+%define tarname Waybar
+Name:           waybar
+Version:	0.9.17
 Release:	1
-License:	MIT
-URL:		https://github.com/Alexays/Waybar
-Source0:	https://github.com/Alexays/Waybar/archive/%{version}.tar.gz
-BuildRequires:	pkgconfig(fmt)
-BuildRequires:	pkgconfig(gtk-layer-shell-0)
-BuildRequires:	pkgconfig(gdkmm-3.0)
-BuildRequires:	pkgconfig(jsoncpp)
-BuildRequires:	pkgconfig(libinput)
-BuildRequires:	pkgconfig(systemd)
-BuildRequires:	stdc++-static-devel
-BuildRequires:	pkgconfig(udev)
-BuildRequires:	meson
-BuildRequires:	pkgconfig(spdlog)
+Group:          Graphical desktop/Other
+Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
+License:        MIT
+URL:            https://github.com/Alexays/Waybar
+Source0:        https://github.com/Alexays/Waybar/archive/%{version}/%{tarname}-%{version}.tar.gz
+
+BuildRequires:  cmake
+BuildRequires:  fmt-devel
+BuildRequires:  sndio-devel
+BuildRequires:  cmake(date)
+BuildRequires:  pkgconfig(gtk-layer-shell-0)
+BuildRequires:  pkgconfig(gdkmm-3.0)
+BuildRequires:  pkgconfig(jsoncpp)
+BuildRequires:  pkgconfig(libinput)
+BuildRequires:  pkgconfig(libevdev)
+BuildRequires:  pkgconfig(systemd)
+BuildRequires:  pkgconfig(jack)
+BuildRequires:  stdc++-static-devel
+BuildRequires:  pkgconfig(udev)
+BuildRequires:  pkgconfig(upower-glib)
+BuildRequires:  pkgconfig(wayland-protocols)
+BuildRequires:  pkgconfig(wireplumber-0.4)
+BuildRequires:  meson
+BuildRequires:  ninja
+BuildRequires:  pkgconfig(spdlog)
+BuildRequires:  pkgconfig(xkbregistry)
+
 # optional: man pages
 BuildRequires:	scdoc
 # optional: tray module
@@ -32,10 +46,13 @@ Recommends:	sway
 Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
-%autosetup -n Waybar-%{version} -p1
+%setup -q -n %{tarname}-%{version}
+%autopatch -p
 
 %build
-%meson
+%meson \
+        -Dtests=disabled \
+        -Dmpris=disabled
 %meson_build
 
 %install
