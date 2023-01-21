@@ -49,7 +49,9 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 %autopatch -p1
 
 %build
-%meson -Dtests=disabled
+%meson \
+        -Dtests=disabled \
+        -Dmpris=disabled
 %meson_build
 
 %install
