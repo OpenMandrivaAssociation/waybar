@@ -1,0 +1,30 @@
+diff -up Waybar-0.9.21/include/util/format.hpp.omv~ Waybar-0.9.21/include/util/format.hpp
+--- Waybar-0.9.21/include/util/format.hpp.omv~	2023-08-16 00:03:23.155340366 +0200
++++ Waybar-0.9.21/include/util/format.hpp	2023-08-16 00:04:42.650142872 +0200
+@@ -88,12 +88,12 @@ struct formatter<pow_format> {
+   }
+ };
+ 
+-// Glib ustirng support
++// Glib ustring support
+ template <>
+ struct formatter<Glib::ustring> : formatter<std::string> {
+   template <typename FormatContext>
+   auto format(const Glib::ustring& value, FormatContext& ctx) {
+-    return formatter<std::string>::format(value, ctx);
++    return formatter<std::string>::format(static_cast<std::string>(value), ctx);
+   }
+ };
+ }  // namespace fmt
+diff -up Waybar-0.9.21/src/modules/sni/item.cpp.omv~ Waybar-0.9.21/src/modules/sni/item.cpp
+--- Waybar-0.9.21/src/modules/sni/item.cpp.omv~	2023-08-16 00:04:51.856235341 +0200
++++ Waybar-0.9.21/src/modules/sni/item.cpp	2023-08-16 00:05:08.770404997 +0200
+@@ -22,7 +22,7 @@ struct fmt::formatter<Glib::VariantBase>
+   template <typename FormatContext>
+   auto format(const Glib::VariantBase& value, FormatContext& ctx) {
+     if (is_printable(value)) {
+-      return formatter<std::string>::format(value.print(), ctx);
++      return formatter<std::string>::format(static_cast<std::string>(value.print()), ctx);
+     } else {
+       return formatter<std::string>::format(value.get_type_string(), ctx);
+     }
