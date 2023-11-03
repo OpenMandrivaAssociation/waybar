@@ -1,4 +1,5 @@
 %define _disable_ld_no_undefined 1
+%global build_ldflags %{build_ldflags} -Wl,--undefined-version
 
 %define tarname Waybar
 Name:           waybar
