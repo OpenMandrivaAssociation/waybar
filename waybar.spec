@@ -56,6 +56,8 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 	-Dcava=disabled
 
 %build
+export CC=gcc
+export CXX=g++
 %meson_build
 
 %install
