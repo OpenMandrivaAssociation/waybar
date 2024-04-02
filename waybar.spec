@@ -48,12 +48,20 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
 %autosetup -p1 -n %{tarname}-%{version}
+%ifarch znver1
+export CC=gcc
+export CXX=g++
+%endif
 %meson \
         -Dtests=disabled \
         -Dmpris=disabled \
 	-Dcava=disabled
 
 %build
+%ifarch znver1
+export CC=gcc
+export CXX=g++
+%endif
 %meson_build
 
 %install
