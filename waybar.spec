@@ -1,13 +1,13 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.10.0
+Version:	0.10.2
 Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
 URL:            https://github.com/Alexays/Waybar
 Source0:        https://github.com/Alexays/Waybar/archive/%{version}/%{tarname}-%{version}.tar.gz
-Patch0:		https://patch-diff.githubusercontent.com/raw/Alexays/Waybar/pull/2919.patch
+#Patch0:		https://patch-diff.githubusercontent.com/raw/Alexays/Waybar/pull/2919.patch
 
 BuildRequires:  cmake
 BuildRequires:  fmt-devel
