@@ -1,6 +1,6 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.9.17
+Version:	0.10.3
 Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
@@ -23,9 +23,7 @@ BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(upower-glib)
 BuildRequires:  pkgconfig(wayland-protocols)
-BuildRequires:  pkgconfig(wireplumber-0.4)
-BuildRequires:  meson
-BuildRequires:  ninja
+BuildRequires:  pkgconfig(wireplumber-0.5)
 BuildRequires:  pkgconfig(spdlog)
 BuildRequires:  pkgconfig(xkbregistry)
 
@@ -42,21 +40,17 @@ BuildRequires:	pkgconfig(libmpdclient)
 # optional: sway integration
 Recommends:	sway
 
+BuildSystem:	meson
+BuildOption:	-Dtests=disabled
+BuildOption:	-Dmpris=disabled
+BuildOption:	-Dcava=disabled
+
+%patchlist
+https://github.com/Alexays/Waybar/commit/7725f6ed5aca20eff825666937e76ae80ab7ea7d.patch
+waybar-0.10.3-fmt11.patch
+
 %description
 Customizable Wayland bar for Sway and Wlroots based compositors.
-
-%prep
-%setup -q -n %{tarname}-%{version}
-%autopatch -p1
-
-%build
-%meson \
-        -Dtests=disabled \
-        -Dmpris=disabled
-%meson_build
-
-%install
-%meson_install
 
 %files
 %{_sysconfdir}/xdg/waybar/
