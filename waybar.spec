@@ -1,6 +1,6 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.10.4
+Version:	0.11.0
 Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
@@ -47,7 +47,7 @@ BuildOption:	-Dcava=disabled
 
 %patchlist
 #https://github.com/Alexays/Waybar/commit/7725f6ed5aca20eff825666937e76ae80ab7ea7d.patch
-waybar-0.10.3-fmt11.patch
+#waybar-0.10.3-fmt11.patch
 
 
 %description
