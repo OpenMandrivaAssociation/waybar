@@ -26,6 +26,7 @@ BuildRequires:  pkgconfig(wayland-protocols)
 BuildRequires:  pkgconfig(wireplumber-0.5)
 BuildRequires:  pkgconfig(spdlog)
 BuildRequires:  pkgconfig(xkbregistry)
+BuildRequires:  lib64gpsd-devel
 
 # optional: man pages
 BuildRequires:	scdoc
