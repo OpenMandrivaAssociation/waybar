@@ -31,6 +31,7 @@ BuildRequires:  pkgconfig(xkbregistry)
 BuildRequires:	pkgconfig(wireplumber-0.5)
 BuildRequires:	pkgconfig(libgps)
 BuildRequires:  pkgconfig(cava)
+BuildRequires:  pkgconfig(fftw3)
 
 # optional: man pages
 BuildRequires:	scdoc
