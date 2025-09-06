@@ -1,6 +1,6 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.13.0
+Version:	0.14.0
 Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
@@ -23,10 +23,14 @@ BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(upower-glib)
 BuildRequires:  pkgconfig(wayland-protocols)
-BuildRequires:  pkgconfig(wireplumber-0.5)
+BuildRequires:  pkgconfig(libpipewire-0.3)
+BuildRequires:  meson
+BuildRequires:  ninja
 BuildRequires:  pkgconfig(spdlog)
 BuildRequires:  pkgconfig(xkbregistry)
-BuildRequires:  lib64gpsd-devel
+BuildRequires:	pkgconfig(wireplumber-0.5)
+BuildRequires:	pkgconfig(libgps)
+BuildRequires:  pkgconfig(cava)
 
 # optional: man pages
 BuildRequires:	scdoc
@@ -38,19 +42,24 @@ BuildRequires:	pkgconfig(libnl-3.0)
 BuildRequires:	pkgconfig(libpulse)
 # optional: mpd module
 BuildRequires:	pkgconfig(libmpdclient)
-
-BuildSystem:	meson
-BuildOption:	-Dtests=disabled
-BuildOption:	-Dmpris=disabled
-BuildOption:	-Dcava=disabled
-
-%patchlist
-#https://github.com/Alexays/Waybar/commit/7725f6ed5aca20eff825666937e76ae80ab7ea7d.patch
-#waybar-0.10.3-fmt11.patch
-
+# optional: sway integration
+Recommends:	sway
 
 %description
 Customizable Wayland bar for Sway and Wlroots based compositors.
+
+%prep
+%setup -q -n %{tarname}-%{version}
+%autopatch -p1
+
+%build
+%meson \
+        -Dtests=disabled \
+        -Dmpris=disabled
+%meson_build
+
+%install
+%meson_install
 
 %files
 %{_sysconfdir}/xdg/waybar/
