@@ -1,6 +1,6 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.14.0
+Version:	0.9.17
 Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
@@ -23,14 +23,11 @@ BuildRequires:  stdc++-static-devel
 BuildRequires:  pkgconfig(udev)
 BuildRequires:  pkgconfig(upower-glib)
 BuildRequires:  pkgconfig(wayland-protocols)
-BuildRequires:  pkgconfig(libpipewire-0.3)
+BuildRequires:  pkgconfig(wireplumber-0.4)
 BuildRequires:  meson
 BuildRequires:  ninja
 BuildRequires:  pkgconfig(spdlog)
 BuildRequires:  pkgconfig(xkbregistry)
-BuildRequires:	pkgconfig(wireplumber-0.5)
-BuildRequires:	pkgconfig(libgps)
-BuildRequires:  pkgconfig(cava)
 
 # optional: man pages
 BuildRequires:	scdoc
