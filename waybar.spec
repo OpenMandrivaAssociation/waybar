@@ -51,7 +51,6 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
 %setup -q -n %{tarname}-%{version}
-%autopatch -p1
 
 %build
 %meson \
