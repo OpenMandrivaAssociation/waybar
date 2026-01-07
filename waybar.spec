@@ -50,7 +50,7 @@ Recommends:	sway
 Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
-%autosetup -q -n %{tarname}-%{version} -p1
+%autosetup -n %{tarname}-%{version} -p1
 
 %build
 # disable cava because current libcava (0.10.6) packaged in OMV is not supported by Waybar 0.14.0.
