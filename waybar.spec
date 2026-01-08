@@ -30,7 +30,7 @@ BuildRequires:  pkgconfig(spdlog)
 BuildRequires:  pkgconfig(xkbregistry)
 BuildRequires:	pkgconfig(wireplumber-0.5)
 BuildRequires:	pkgconfig(libgps)
-BuildRequires:  pkgconfig(cava)
+#BuildRequires:  pkgconfig(cava)
 BuildRequires:  pkgconfig(fftw3)
 
 # optional: man pages
@@ -50,12 +50,14 @@ Recommends:	sway
 Customizable Wayland bar for Sway and Wlroots based compositors.
 
 %prep
-%setup -q -n %{tarname}-%{version}
-%autopatch -p1
+%autosetup -n %{tarname}-%{version} -p1
 
 %build
+# disable cava because current libcava (0.10.6) packaged in OMV is not supported by Waybar 0.14.0.
+# Enable it again in future and keep cava in sync with waybar - this mean do not package too much recent version or just check if is compatibile with waybar.
 %meson \
         -Dtests=disabled \
+        -Dcava=disabled \
         -Dmpris=disabled
 %meson_build
 
