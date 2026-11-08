@@ -1,7 +1,7 @@
 %define tarname Waybar
 Name:           waybar
-Version:	0.15.0
-Release:	3
+Version:	0.16.0
+Release:	1
 Group:          Graphical desktop/Other
 Summary:        Customizable Wayland bar for Sway and Wlroots based compositors
 License:        MIT
@@ -17,6 +17,7 @@ BuildRequires:  pkgconfig(gdkmm-3.0)
 BuildRequires:  pkgconfig(jsoncpp)
 BuildRequires:  pkgconfig(libinput)
 BuildRequires:  pkgconfig(libevdev)
+BuildRequires:  pkgconfig(mm-glib)
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  pkgconfig(jack)
 BuildRequires:  stdc++-static-devel
@@ -43,8 +44,9 @@ BuildRequires:	pkgconfig(libnl-3.0)
 BuildRequires:	pkgconfig(libpulse)
 # optional: mpd module
 BuildRequires:	pkgconfig(libmpdclient)
+
 # optional: sway integration
-Recommends:	sway
+#Recommends:	sway
 
 %description
 Customizable Wayland bar for Sway and Wlroots based compositors.
@@ -67,5 +69,7 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 %files
 %{_sysconfdir}/xdg/waybar/
 %{_bindir}/waybar
-%{_mandir}/man?/%{name}*
 %{_userunitdir}/waybar.service
+%{_libdir}/%{name}/%{name}-gps.so
+%{_mandir}/man?/%{name}*
+%{_mandir}/man5/%{name}-gps.5*
