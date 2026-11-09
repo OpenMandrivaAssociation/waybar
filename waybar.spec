@@ -60,6 +60,7 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 %meson \
         -Dtests=disabled \
         -Dcava=disabled \
+        -Db_lundef=false \
         -Dmpris=disabled
 %meson_build
 
