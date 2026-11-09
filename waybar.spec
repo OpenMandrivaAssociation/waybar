@@ -60,7 +60,7 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 %meson \
         -Dtests=disabled \
         -Dcava=disabled \
-        -Db_lundef=false \
+        -Dgps=disabled \
         -Dmpris=disabled
 %meson_build
 
@@ -71,6 +71,6 @@ Customizable Wayland bar for Sway and Wlroots based compositors.
 %{_sysconfdir}/xdg/waybar/
 %{_bindir}/waybar
 %{_userunitdir}/waybar.service
-%{_libdir}/%{name}/%{name}-gps.so
+#{_libdir}/%{name}/%{name}-gps.so
 %{_mandir}/man?/%{name}*
-%{_mandir}/man5/%{name}-gps.5*
+#{_mandir}/man5/%{name}-gps.5*
